@@ -4,7 +4,7 @@ var isPhish = {};
 
 
 function fetchLive(callback) {
-  $.getJSON("https://raw.githubusercontent.com/picopalette/phishing-detection-plugin/master/static/classifier.json", function (data) {
+  $.getJSON("https://raw.githubusercontent.com/JosephWong5/anti-phishing/master/static/classifier.json", function (data) {
     chrome.storage.local.set({ cache: data, cacheTime: Date.now() }, function () {
       callback(data);
     });
