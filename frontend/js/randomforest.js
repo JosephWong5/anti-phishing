@@ -43,6 +43,7 @@ let random_forest = function (clf) {
       }
       results.push([positive >= negative, Math.max(positive, negative)]);
     }
+    console.log(results);
     return results;
   }
 
