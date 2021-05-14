@@ -9,7 +9,7 @@ data = np.array(dataset['data'])
 print('The dataset has {0} datapoints with {1} features'.format(data.shape[0], data.shape[1]-1))
 print('Features: {0}'.format([feature[0] for feature in dataset['attributes']]))
 
-data = data[:, [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 22, 28, 30]]
+data = data[:, [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 22, 30]]
 
 X, y = data[:, :-1], data[:, -1]
 y.reshape(y.shape[0])

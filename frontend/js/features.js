@@ -291,44 +291,6 @@ if (iframes.length == 0) {
   result["iFrames"] = "1";
 }
 
-//---------------------- 28.Links pointing to page ----------------------
-
-var onlyDomain = extractHostname(urlDomain);
-var onlyItemDomain;
-var arr = [], l = document.links;
-
-for (var i = 0; i < l.length; i++) {
-  arr.push(l[i].href);
-}
-
-for (const item in arr) {
-  
-  onlyItemDomain = extractHostname(arr[item]);
- 
-  if (onlyDomain === onlyItemDomain) {
-    result["Links Pointing to Page"] = 1;
-  }
-  else {
-    result["Links Pointing to Page"] = -1;
-  }
-}
-
-function extractHostname(url) {
-  var hostname;
-
-  if (url.indexOf("//") > -1) {
-    hostname = url.split('/')[2];
-  }
-  else {
-    hostname = url.split('/')[0];
-  }
-
-  hostname = hostname.split(':')[0];
-  hostname = hostname.split('?')[0];
-
-  return hostname;
-}
-
 //---------------------- Sending the result  ----------------------
 
 chrome.runtime.sendMessage(result, function (response) {
