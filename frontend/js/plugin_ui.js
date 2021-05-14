@@ -1,9 +1,4 @@
 var background = chrome.extension.getBackgroundPage();
-var colors = {
-  "-1": "#58bc8a",
-  "0": "#ffeb3c",
-  "1": "#ff8b66"
-};
 
 chrome.tabs.query({ currentWindow: true, active: true }, function (tabs) {
   var isPhish = background.isPhish[tabs[0].id];
